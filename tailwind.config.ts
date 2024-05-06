@@ -1,3 +1,4 @@
+import { withMaterialColors } from "tailwind-material-colors";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -7,14 +8,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
-export default config;
+
+const materialPaletteConfig = {
+  primary: "#3BD4EE",
+};
+
+export default withMaterialColors(config, materialPaletteConfig);
